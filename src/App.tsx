@@ -3,8 +3,7 @@ import './App.css';
 import { Route, Switch, Redirect } from 'react-router';
 
 import NaviBar from 'components/NaviBar';
-import Home from 'components/pages/Home';
-import History from 'components/pages/History';
+import { Pages } from 'data/Pages';
 
 const App: React.FC = () => (
   <>
@@ -14,8 +13,11 @@ const App: React.FC = () => (
     />
     <NaviBar />
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/history" component={History} />
+      {Pages.map((item) => (
+        <Route exact path={item.route}>
+          {item.component}
+        </Route>
+      ))}
       <Redirect push to="/" />
     </Switch>
   </>
