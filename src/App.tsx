@@ -4,6 +4,8 @@ import { Route, Switch, Redirect } from 'react-router';
 
 import NaviBar from 'components/NaviBar';
 import { Pages } from 'data/Pages';
+import SkillCards from 'components/organisms/SkillCards';
+import { Skills } from 'data/Skills';
 
 const App: React.FC = () => (
   <>
@@ -12,6 +14,7 @@ const App: React.FC = () => (
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
     <NaviBar />
+    <SkillCards skills={skills} />
     <Switch>
       {Pages.map((item) => (
         <Route exact path={item.route}>

@@ -20,7 +20,7 @@ export const Episodes: Episode[] = [
   {
     id: 3,
     date: '2022-04',
-    title: '大学院へ進学',
-    description: '博士には行かない予定',
+    title: '大学院へ進学（予定）',
+    description: '博士には行かない',
   },
 ];
