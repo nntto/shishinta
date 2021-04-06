@@ -3,23 +3,18 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { FC } from 'react';
-import { SkillItem } from 'data/Skills';
+import { SkillItem } from 'data/SkillItems';
 import SimpleRating from 'components/atoms/SimpleRating';
 
 const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
+  root: {},
   icon: {
     fontSize: 100,
     textAlign: 'center',
   },
 });
-const SkillCard: FC<{ skill: SkillItem }> = ({ skill }) => {
+
+const SkillCard = ({ skill }: { skill: SkillItem }) => {
   const classes = useStyles();
 
   return (

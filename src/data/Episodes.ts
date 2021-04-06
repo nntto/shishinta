@@ -15,7 +15,7 @@ export const Episodes: Episode[] = [
     id: 2,
     date: '2022-03',
     title: '学部卒業（予定）',
-    description: 'コロナ終わっているといいなあ',
+    description: '卒論かけるのだろうか',
   },
   {
     id: 3,
