@@ -4,6 +4,11 @@ module.exports = {
   ignoreFiles: ['**/node_modules/**'],
   rules: {
     'string-quotes': 'single',
-    'selector-type-no-unknown': 'false',
+    'selector-type-no-unknown': [
+      true,
+      {
+        ignore: ['custom-elements'],
+      },
+    ],
   },
 };

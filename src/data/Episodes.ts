@@ -13,14 +13,14 @@ export const Episodes: Episode[] = [
   },
   {
     id: 2,
-    date: '2019-04',
-    title: '情報系学部に移行',
-    description: 'GPA戦争はまだ終わらない',
+    date: '2022-03',
+    title: '学部卒業（予定）',
+    description: 'コロナ終わっているといいなあ',
   },
   {
     id: 3,
-    date: '2020-10',
-    title: 'アルゴリズム系の研究室に配属される',
-    description: '何もしない日々が続いている',
+    date: '2022-04',
+    title: '大学院へ進学',
+    description: '博士には行かない予定',
   },
 ];
