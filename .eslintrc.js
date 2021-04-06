@@ -32,7 +32,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/jsx-props-no-spreading': ['off'],
+    'react/prop-types': 'off',
   },
   settings: {
     'import/parsers': {
