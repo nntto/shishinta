@@ -18,7 +18,10 @@ const SkillCard = ({ skill }: { skill: SkillItem }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card
+      className={classes.root}
+      style={{ border: 'none', boxShadow: 'none', borderRadius: 0 }}
+    >
       <CardActionArea>
         <CardContent>
           <Typography className={classes.icon}>{skill.icon}</Typography>
@@ -26,7 +29,7 @@ const SkillCard = ({ skill }: { skill: SkillItem }) => {
             {skill.title}
           </Typography>
           <SimpleRating value={skill.rate} />
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" component="p">
             {skill.desc}
           </Typography>
         </CardContent>

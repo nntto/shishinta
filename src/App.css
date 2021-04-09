@@ -1,10 +1,15 @@
-.container {
-  margin: 0 auto 0;
-  width: 700px !important;
-  max-width: none !important;
-  font-size: 1rem !important;
+body {
+  color: #2d334a;
+  background-color: #e3f6f5;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #272343;
+}
 .container h1 {
   margin-bottom: 3rem !important;
 }

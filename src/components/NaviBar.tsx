@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -7,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Redirect } from 'react-router';
 import { Pages } from 'data/Pages';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { Shadows } from '@material-ui/core/styles/shadows';
 
 interface TabPanelProps {
   children: React.ReactNode;
@@ -39,15 +40,7 @@ function a11yProps(index: any) {
   };
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
-
 const NaviBar = () => {
-  const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -55,8 +48,16 @@ const NaviBar = () => {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <MuiThemeProvider
+      theme={createMuiTheme({
+        shadows: Array(25).fill('none') as Shadows,
+      })}
+    >
+      <AppBar
+        position="static"
+        color="transparent"
+        style={{ boxShadow: 'none' }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -75,7 +76,7 @@ const NaviBar = () => {
           <Redirect to={item.route} />
         </TabPanel>
       ))}
-    </div>
+    </MuiThemeProvider>
   );
 };
 
