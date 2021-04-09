@@ -22,6 +22,7 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', 'tsx'] }],
     'react/react-in-jsx-scope': 'off',
     'no-use-before-define': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
