@@ -8,6 +8,7 @@ import Container from '@material-ui/core/Container';
 import { MuiThemeProvider } from '@material-ui/core';
 import theme from 'assets/styles/theme';
 import Footer from 'components/organisms/Footer';
+import ScrollInteraction from 'components/atoms/scrollInteraction';
 
 const App: React.FC = () => (
   <MuiThemeProvider theme={theme}>
@@ -27,6 +28,7 @@ const App: React.FC = () => (
           <Redirect push to="/" />
         </Switch>
       </Container>
+      <ScrollInteraction />
       <Footer />
     </body>
   </MuiThemeProvider>

@@ -68,4 +68,32 @@ export const SkillItems: SkillItem[] = [
     rate: 3,
     icon: <DiGithub />,
   },
+  {
+    id: 6,
+    title: 'Github',
+    desc: 'すっごい便利',
+    rate: 3,
+    icon: <DiGithub />,
+  },
+  {
+    id: 6,
+    title: 'Github',
+    desc: 'すっごい便利',
+    rate: 3,
+    icon: <DiGithub />,
+  },
+  {
+    id: 6,
+    title: 'Github',
+    desc: 'すっごい便利',
+    rate: 3,
+    icon: <DiGithub />,
+  },
+  {
+    id: 6,
+    title: 'Github',
+    desc: 'すっごい便利',
+    rate: 3,
+    icon: <DiGithub />,
+  },
 ];
