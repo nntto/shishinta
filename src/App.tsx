@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import { Route, Switch, Redirect } from 'react-router';
-import NaviBar from 'components/NaviBar';
+import NaviBar from 'components/organisms/NaviBar';
 import { Pages } from 'data/Pages';
 import 'App.css';
 import Container from '@material-ui/core/Container';
 import { MuiThemeProvider } from '@material-ui/core';
 import theme from 'assets/styles/theme';
+import Footer from 'components/organisms/Footer';
 
 const App: React.FC = () => (
   <MuiThemeProvider theme={theme}>
@@ -26,6 +27,7 @@ const App: React.FC = () => (
           <Redirect push to="/" />
         </Switch>
       </Container>
+      <Footer />
     </body>
   </MuiThemeProvider>
 );
