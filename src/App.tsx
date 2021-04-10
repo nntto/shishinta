@@ -28,7 +28,6 @@ const App: React.FC = () => (
           <Redirect push to="/" />
         </Switch>
       </Container>
-      <ScrollInteraction />
       <Footer />
     </body>
   </MuiThemeProvider>
