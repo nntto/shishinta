@@ -10,6 +10,7 @@ export type Page = {
   route: string;
   label: string;
   component: React.ReactNode;
+  elementId: string;
 };
 
 export const Pages: Page[] = [
@@ -43,4 +44,7 @@ export const Pages: Page[] = [
     label: 'WORKS',
     component: <Works />,
   },
-];
+].map((item) => ({
+  ...item,
+  elementId: `section${String(item.id)}`,
+}));

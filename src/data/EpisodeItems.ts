@@ -5,7 +5,7 @@ export type Episode = {
   description?: string;
 };
 
-export const Episodes: Episode[] = [
+export const EpisodeItems: Episode[] = [
   {
     id: 1,
     date: '2018-04',

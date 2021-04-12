@@ -1,82 +1,62 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import { Redirect } from 'react-router';
-import { Pages } from 'data/Pages';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { Page } from 'data/Pages';
+import {
+  createMuiTheme,
+  createStyles,
+  makeStyles,
+  MuiThemeProvider,
+  Theme,
+  Toolbar,
+} from '@material-ui/core';
 import { Shadows } from '@material-ui/core/styles/shadows';
+import { Link } from 'react-scroll';
 
-interface TabPanelProps {
-  children: React.ReactNode;
-  index: any;
-  value: any;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index } = props;
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
+const NaviBar = ({ pages }: { pages: Page[] }) => {
+  const classes = useStyles();
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: any) {
-  return {
-    id: `simple-tab-${index}`,
-    ariaControls: `simple-tabpanel-${index}`,
-  };
-}
-
-const NaviBar = () => {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-    setValue(newValue);
-  };
-
-  return (
-    <MuiThemeProvider
-      theme={createMuiTheme({
-        shadows: Array(25).fill('none') as Shadows,
-      })}
-    >
-      <AppBar
-        position="static"
-        color="transparent"
-        style={{ boxShadow: 'none' }}
+    <div className={classes.root}>
+      <MuiThemeProvider
+        theme={createMuiTheme({
+          shadows: Array(25).fill('none') as Shadows,
+        })}
       >
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
+        <AppBar
+          position="static"
+          color="transparent"
+          style={{ boxShadow: 'none' }}
         >
-          {Pages.map((item) => {
-            const { id, ariaControls } = a11yProps(item.id);
-            return (
-              <Tab label={item.label} id={id} aria-controls={ariaControls} />
-            );
-          })}
-        </Tabs>
-      </AppBar>
-      {Pages.map((item) => (
-        <TabPanel value={value} index={item.id}>
-          <Redirect to={item.route} />
-        </TabPanel>
-      ))}
-    </MuiThemeProvider>
+          <Toolbar>
+            {pages.map((item) => (
+              <Link
+                activeClass="active"
+                to="section3"
+                spy
+                smooth
+                offset={-70}
+                duration={800}
+                className={classes.title}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </Toolbar>
+        </AppBar>
+      </MuiThemeProvider>
+    </div>
   );
 };
 
