@@ -1,8 +1,15 @@
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import HomeIcon from '@material-ui/icons/Home';
+import React from 'react';
 
-export default [
+export type FooterItem = {
+  id: number;
+  label: string;
+  value: string;
+  icon: React.ReactNode;
+};
+export const FooterItems = [
   {
     id: 0,
     label: 'Twitter',

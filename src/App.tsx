@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import NaviBar from 'components/organisms/NaviBar';
 import { Pages } from 'data/Pages';
 import 'App.css';
 import { Container, MuiThemeProvider } from '@material-ui/core';
 import theme from 'assets/styles/theme';
 import Footer from 'components/organisms/Footer';
+import MenuBar from 'components/organisms/MenuBar';
+import { FooterItems } from 'data/FotterItems';
 
 const App: React.FC = () => (
   <MuiThemeProvider theme={theme}>
@@ -14,7 +15,7 @@ const App: React.FC = () => (
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       />
-      <NaviBar pages={Pages} />
+      <MenuBar pages={Pages} />
       <Container>
         {Pages.map((item) => (
           <div style={{ minHeight: '100vh' }} id={item.elementId}>
@@ -22,7 +23,7 @@ const App: React.FC = () => (
           </div>
         ))}
       </Container>
-      <Footer />
+      <Footer footerItems={FooterItems} />
     </body>
   </MuiThemeProvider>
 );
